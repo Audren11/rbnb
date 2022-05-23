@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  namespace :owner, path: "dashboard" do
-    resources :bookings, only: [ :index, :show, :create] do
+  namespace :owner do
+    resources :bookings, only: [ :index, :create] do
       member do
         patch :approve, :reject
       #   post '/approve', to: 'bookings#approve'
@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     end
     resources :dinos, only: [ :new, :create]
   end
+  resource :dashboard, only: :show
 end
 # resources :ratings, only: [:new, :create]
