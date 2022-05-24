@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 puts "Cleaning database..."
 Dino.destroy_all
 
@@ -48,3 +49,4 @@ catherine = { name: "Cathy L'Indolore", specie: "Tricératops", price: 190,
   puts "Created #{dino.name}"
 end
 puts "Finished!"
+

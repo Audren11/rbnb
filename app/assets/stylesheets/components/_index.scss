@@ -3,3 +3,103 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+
+// CARDS
+.card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+//--> TITLE
+.card-title .dino-name {
+  position: absolute;
+  left: 16px;
+  top: 20px;
+}
+
+// --> DESCRIPTION
+
+.card-body .bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-pricing {
+  position: absolute;
+  right: 16px;
+  bottom: 20px;
+}
+
+// //--> BUTTON
+// .btn-ghost {
+//   font-size: 10px;
+//   color: #4A4A4A;
+//   border: 1px solid #4A4A4A;
+//   border-radius: 50px;
+//   font-weight: lighter;
+//   opacity: 0.6;
+//   transition: opacity 0.3s ease;
+// }
+
+// .btn-ghost:hover {
+//   opacity: 1;
+// }
+
+
+
+
+
+
+
+
+
+
+// FOOTER
+.footer {
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
