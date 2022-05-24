@@ -1,4 +1,5 @@
 class DinosController < ApplicationController
+
   def index
     @dinos = Dino.all
   end
@@ -16,6 +17,12 @@ class DinosController < ApplicationController
       render :new
     end
   end
+
+  def show
+    set_dino
+  end
+
+
 
   private
 
