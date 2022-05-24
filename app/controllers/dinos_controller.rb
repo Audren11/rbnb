@@ -22,8 +22,6 @@ class DinosController < ApplicationController
     set_dino
   end
 
-
-
   private
 
   def set_dino
