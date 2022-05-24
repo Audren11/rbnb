@@ -3,17 +3,13 @@
   <div class="dino_container">
     <div class="description_dino">
       <div class="description_image">
-        <% if @dino.photo.attached?%>
-          <%= cl_image_tag(@dino.photo.key, crop: :fill) %>
-        <% end %>
+
       </div>
       <div class="description">
-        <p><%= "#{@dino.description}" %></p>
-        <p><%= " #{@dino.name}, #{@tree.specie}, #{@tree.countryname}" %></p>
-        <p><%= cl_image_tag(@tree.user.photo.key, width: 50, height: 45, class: "avatar dropdown-toggle", crop: :fill) %> Contact <%= @tree.user.first_name.capitalize %> </p>
+        <%# <p><%= "#{dino.name}, #{dino.specie}, #{dino.characteristic}, #{dino.price}, #{dino.description}, #{dino.place}" %></p> %>
+        <%# <p><%= cl_image_tag(@dino.user.photo.key, width: 50, height: 45, class: "avatar dropdown-toggle", crop: :fill) %> Contact <%= @dino.user.first_name.capitalize %> </p> %>
       </div>
     </div>
-
   </div>
 
 
