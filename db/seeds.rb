@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "open-uri"
+
 puts "Cleaning database..."
 Dino.destroy_all
 User.destroy_all
@@ -17,9 +19,12 @@ jeanfrancois = User.create(first_name: "Jean-Francois", last_name: "Martin", pas
 xavier = User.create(first_name: "Xavier", last_name: "Dupont", password: "azerty", email: "xavier_lefuyard@zoo.com")
 marty = User.create(first_name: "Marty", last_name: "McFly", password: "azerty", email: "retour_verslefutur@zoo.com")
 
-jean_jean = { name: "Jean-Jean", specie: "T-Rex", price: 100,
+jean_jean = Dino.create!(name: "Jean-Jean", specie: "T-Rex", price: 100,
               description: "Sacré Jean-Jean ! De son vrai nom Rémy, il aime se détendre à l'asile par temps clair, un clown!",
-              place: 'Lamballe', characteristic: 'Maniaco-dépressif', user: gerard }
+              place: 'Lamballe', characteristic: 'Maniaco-dépressif', user: gerard )
+
+jean_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653385264/b8ncm4khejc2ivi0marq.jpg")
+jean_jean.photo.attach(io: jean_image, filename: 'nes.jpg', content_type: 'image/jpg')
 
 giselle = { name: "Giselle La Pelle", specie: "Spinosaurus", price: 150,
             description: "Elle n'est pas très gracieuse et accompagnable, mais elle est futée et renifle bien les portes, indispensable en cas de séquestration.",
@@ -49,7 +54,7 @@ catherine = { name: "Cathy L'Indolore", specie: "Tricératops", price: 190,
               description: "Gémaux de sous-naissance, Géraldine peut vous brosser délicatement les cheveux comme vous les arracher (ainsi que votre tête). En cas de besoin appelez le SAV, nous serons ravis de vous aider.",
               place: 'Plougastel', characteristic: 'Flexi-chiante', user: jeanfrancois }
 
-dinos_array = [jean_jean, giselle, kevin, oscar, rodrigues, leopold, geraldine, catherine]
+dinos_array = [giselle, kevin, oscar, rodrigues, leopold, geraldine, catherine]
 dinos_array.each do |attributes|
   dino = Dino.create!(attributes)
   puts "Created #{dino.name}"
