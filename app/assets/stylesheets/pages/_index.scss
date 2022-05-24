@@ -1,9 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
 
+
 // BACKGROUND
 body::before {
-  background-image: url(https://wallpaperaccess.com/full/126015.jpg);
+  background: url(https://wallpaperaccess.com/full/126015.jpg);
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -13,6 +14,7 @@ body::before {
   filter: brightness(50%);
 }
 
+
 // CARD LOOK
 .card {
   overflow: hidden;
@@ -21,11 +23,7 @@ body::before {
   border-radius: 20px;
 }
 
-.card > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
+
 
 
 // TITLES SIZES
