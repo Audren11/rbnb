@@ -1,6 +1,6 @@
 class DinosController < ApplicationController
   def index
-    @dinos = Dinos.all
+    @dinos = Dino.all
   end
 
   def new
@@ -18,6 +18,10 @@ class DinosController < ApplicationController
   end
 
   private
+
+  def set_dino
+    @dino = Dino.find(params[:id])
+  end
 
   def dino_params
     params.require(:dino).permit(:name, :specie, :characteristic, :price, :description, :place)
