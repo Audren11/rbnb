@@ -21,7 +21,7 @@ marty = User.create(first_name: "Marty", last_name: "McFly", password: "azerty",
 
 jean_jean = Dino.create!(name: "Jean-Jean", specie: "T-Rex", price: 100,
               description: "Sacré Jean-Jean ! De son vrai nom Rémy, il aime se détendre à l'asile par temps clair, un vrai clown!",
-              place: 'Lamballe', characteristic: 'Maniaco-dépressif', user: gerard)
+              place: 'Ta-Tronche-Sur-Mer', characteristic: 'Maniaco-dépressif', user: gerard)
 
 jean_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653385264/b8ncm4khejc2ivi0marq.jpg")
 jean_jean.photo.attach(io: jean_image, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -29,7 +29,7 @@ jean_jean.photo.attach(io: jean_image, filename: 'nes.jpg', content_type: 'image
 
 giselle = Dino.create!(name: "Giselle La Pelle", specie: "Spinosaurus", price: 150,
             description: "Elle n'est pas très gracieuse et accompagnable, mais elle est futée et renifle bien les portes, indispensable en cas de séquestration.",
-            place: 'Mon-Cul', characteristic: 'Manges des portes', user: xavier)
+            place: 'Vatan', characteristic: 'Manges des portes', user: xavier)
 
 giselle_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653385264/b8ncm4khejc2ivi0marq.jpg")
 giselle.photo.attach(io: giselle_image, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -45,7 +45,7 @@ kevin.photo.attach(io: kevin_image, filename: 'nes.jpg', content_type: 'image/jp
 
 oscar = Dino.create!(name: "Oscar'o Poincom", specie: "Diplodocus", price: 150,
           description: "Commercial sous pression depuis la parution de son insupportable pub, oscar est bouli-enfant-ique. Pas de panique, il les vomit toujours !",
-          place: 'Bruz', characteristic: 'Mange les enfants mais les vomit toujours', user: jeanfrancois)
+          place: 'Montcuq', characteristic: 'Mange les enfants mais les vomit toujours', user: jeanfrancois)
 
 oscar_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653385264/b8ncm4khejc2ivi0marq.jpg")
 oscar.photo.attach(io: oscar_image, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -53,7 +53,7 @@ oscar.photo.attach(io: oscar_image, filename: 'nes.jpg', content_type: 'image/jp
 
 rodrigues = Dino.create!(name: "Rodrigues L'Intrépide", specie: "Brachiosaurus", price: 120,
               description: "Rodrigues se déplace sur toute la Norvège pour nettoyer vos intérieurs ! Maniaque du ménage, il saura faire disparaître frigo, salon, maison entière.",
-              place: 'Norvège', characteristic: 'Maniaque du ménage', user: xavier)
+              place: 'Bourré-en-Retz', characteristic: 'Maniaque du ménage', user: xavier)
 
 rodrigues_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653385264/b8ncm4khejc2ivi0marq.jpg")
 rodrigues.photo.attach(io: rodrigues_image, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -69,7 +69,7 @@ leopold.photo.attach(io: leopold_image, filename: 'nes.jpg', content_type: 'imag
 
 geraldine = Dino.create!(name: "Géraldine La Narine", specie: "Vélociraptor", price: 175,
               description: "Vélociraptor d'exception, Géraldine se crache sous vos yeux et vous explose les tympans au karaoké, rock'n'roll baby !",
-              place: 'Nice', characteristic: 'Ne sait pas voler mais chante faux', user: gerard)
+              place: 'Clochemerle', characteristic: 'Ne sait pas voler mais chante faux', user: gerard)
 
 geraldine_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653385264/b8ncm4khejc2ivi0marq.jpg")
 geraldine.photo.attach(io: geraldine_image, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -77,7 +77,7 @@ geraldine.photo.attach(io: geraldine_image, filename: 'nes.jpg', content_type: '
 
 catherine = Dino.create!(name: "Cathy L'Indolore", specie: "Tricératops", price: 190,
               description: "Gémaux de sous-naissance, Géraldine peut vous brosser délicatement les cheveux comme vous les arracher (ainsi que votre tête). En cas de besoin appelez le SAV, nous serons ravis de vous aider.",
-              place: 'Plougastel', characteristic: 'Flexi-chiante', user: jeanfrancois)
+              place: 'Pisse-en-Lair', characteristic: 'Flexi-chiante', user: jeanfrancois)
 
 catherine_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653385264/b8ncm4khejc2ivi0marq.jpg")
 catherine.photo.attach(io: catherine_image, filename: 'nes.jpg', content_type: 'image/jpg')
