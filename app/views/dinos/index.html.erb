@@ -1,38 +1,44 @@
 <!-- CARD-->
 <div class="container">
-
-    <div class="row g-5">
-
-
-  <% @dinos.each do |dino| %>
+  <div class="row g-5">
+    <% @dinos.each do |dino| %>
       <div class="col">
-        <div class="card" style="width: 18rem;">
-          <div class="card-header">
-            <%= dino.name %>
-          </div>
-          <%# <img src="https://i.etsystatic.com/18854467/r/il/98d65a/3574197919/il_fullxfull.3574197919_olfx.jpg" class="dino-img" alt="..."> %>
-          <% if dino.photo.attached? %>
-            <%= cl_image_tag dino.photo.key, height: 300, width: 400, crop: :fill %>
-          <% else %>
-            <p>Pas d'image.</p>
-          <% end %>
-          <div class="card-body">
-            <div class="bar">
-              <h5><%= dino.specie %></h5>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
+        <%= link_to dino_path(dino), class: "text-decoration-none" do %>
+          <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              <%= dino.name %>
             </div>
-            <p class="fst-italic"> <%= dino.place %></p>
-            <div class="description">
-              <h6><%= dino.characteristic %></h6>
-              <h2 class="card-pricing"><%= dino.price%>€</h2>
+
+            <% if dino.photo.attached? %>
+              <%= cl_image_tag dino.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+              <p>Pas d'image.</p>
+            <% end %>
+
+            <div class="card-body d-flex flex-column justify-content-between">
+
+              <div class="d-flex flex-column justify-content-between">
+                  <div class="bar">
+                    <h5><%= dino.specie %></h5>
+                    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
+                  </div>
+                  <p class="fst-italic"> <%= dino.place %></p>
+              </div>
+
+              <div class="description d-flex justify-content-between">
+                <h6><%= dino.characteristic %></h6>
+                <h2 class="card-pricing d-flex align-items-center"><%= dino.price%>€</h2>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 
 <%# AJOUT NAV BAR
 GESTION TAILE CARD VS TEXTE (Leopold) %>
 <%# AJOUT DES PHOTOS %>
+<%# Cliquable %>

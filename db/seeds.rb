@@ -59,7 +59,7 @@ rodrigues_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1
 rodrigues.photo.attach(io: rodrigues_image, filename: 'nes.jpg', content_type: 'image/jpg')
 
 
-leopold = Dino.create!(name: "Léopold Junior Le Patricide ", specie: "Allosaurus", price: 100,
+leopold = Dino.create!(name: "Léopold Jr Le Patricide ", specie: "Allosaurus", price: 100,
             description: "Escobar n'a qu'à bien se tenir, Léopold vous fournira le meilleur béton de la région, grosse soirée en prévision !",
             place: 'Bogota', characteristic: 'Accro au béton', user: marty)
 
