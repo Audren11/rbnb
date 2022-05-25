@@ -4,7 +4,7 @@
 
 // BACKGROUND
 body::before {
-  background: url(https://wallpaperaccess.com/full/126015.jpg);
+  background-image: url(pages/images/jungle3.jpg);
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -19,6 +19,7 @@ body::before {
 .card {
   overflow: hidden;
   background: white;
+  opacity: 0.8;
   box-shadow: 0 0 10px rgba(20, 20, 20, 0.1);
   border-radius: 20px;
 }

@@ -1,27 +1,43 @@
 <!-- CARD-->
 <div class="container">
+<<<<<<< HEAD
   <%# <% @dinos.each do |dino| %>
     <div class="row g-5">
+=======
+
+    <div class="row g-5">
+
+
+  <% @dinos.each do |dino| %>
+>>>>>>> 9bdb0f1f66ff1042fdea8acee9b136a4dba3824b
       <div class="col">
         <div class="card" style="width: 18rem;">
           <div class="card-header">
-            Wilfried
+            <%= dino.name %>
           </div>
-          <img src="https://i.etsystatic.com/18854467/r/il/98d65a/3574197919/il_fullxfull.3574197919_olfx.jpg" class="dino-img" alt="...">
+          <%# <img src="https://i.etsystatic.com/18854467/r/il/98d65a/3574197919/il_fullxfull.3574197919_olfx.jpg" class="dino-img" alt="..."> %>
+          <% if dino.photo.attached? %>
+            <%= cl_image_tag dino.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <p>Pas d'image.</p>
+          <% end %>
           <div class="card-body">
             <div class="bar">
-              <h5>Velociraptor</h5>
+              <h5><%= dino.specie %></h5>
               <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
             </div>
-            <p class="fst-italic"> Passage de la poule noire, Nantes</p>
+            <p class="fst-italic"> <%= dino.place %></p>
             <div class="description">
-              <p>Allergique à la poussière</p>
-              <p>Flexitarien</p>
-              <h2 class="card-pricing">50€/jour</h2>
+              <p><%= dino.characteristic %></p>
+              <h2 class="card-pricing"><%= dino.price %></h2>
             </div>
           </div>
         </div>
       </div>
+<<<<<<< HEAD
     </div>
   <%# % end %>
+=======
+  <% end %>
+>>>>>>> 9bdb0f1f66ff1042fdea8acee9b136a4dba3824b
 </div>
