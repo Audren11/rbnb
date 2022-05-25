@@ -17,9 +17,10 @@ body::before {
 .card {
   overflow: hidden;
   background: white;
-  opacity: 0.8;
+  opacity: 0.9;
   box-shadow: 0 0 10px rgba(20, 20, 20, 0.1);
   border-radius: 20px;
+  block-size: 400px;
 }
 
 .card > img {
@@ -37,7 +38,15 @@ body::before {
 }
 
 .card h5 {
-  font-size: 18px;
+  font-size: 16px;
+}
+
+.card h6 {
+  box-sizing: content-box;
+  width: 70%;
+  padding: 5px;
+  font-size: 15px;
+  margin: 0;
 }
 
 .card p {
@@ -64,8 +73,24 @@ body::before {
   padding: 10px 0;
 }
 
+.card-body {
+  padding-bottom: 8px;
+}
+
 .card-pricing {
-  position: absolute;
-  right: 16px;
-  padding-bottom: 20px;
+  // position: absolute
+  // position: relative;
+  // left: 215px; bottom: 200px;
+  // padding-bottom: 24px;
+}
+
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+a:hover{
+  text-decoration: none;
 }
