@@ -1,1 +1,56 @@
 // Specific CSS for your home-page
+
+
+// BANNER
+.banner {
+  // background-size: cover;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.hdqwalls.com/wallpapers/dino-history.jpg);
+  // background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url(dino-history.jpg);
+  background-position-x: 40%;
+  background-position-y: 0%;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+// FOOTER
+.footer {
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding:50px;
+  color: rgba(0,0,0,0.3);
+
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
