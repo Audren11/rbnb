@@ -5,10 +5,9 @@
 body {
   background-image: asset-url('jungle3.jpg');
   background-size: cover;
+  backdrop-filter: brightness(80%);
   width: 100%;
   height: 100%;
-  // position: fixed;
   content: "";
   top: 0; left: 0;
-  filter: brightness(90%);
 }

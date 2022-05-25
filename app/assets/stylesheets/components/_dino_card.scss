@@ -7,6 +7,10 @@
   block-size: 400px;
 }
 
+.position-card-dino {
+  padding-top: 50px;
+}
+
 .card > img {
   height: 200px;
   width: 100%;
@@ -43,6 +47,13 @@
   font-size: 22px;
   display: flex;
   justify-content:center;
+}
+
+.card-image-dino{
+  margin: 7px;
+  height: 10rem;
+  background-position: center;
+  background-size: cover;
 }
 
 // --> DESCRIPTION
