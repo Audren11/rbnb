@@ -1,4 +1,4 @@
-// SEARCH BAr
+// SEARCH BAR
 .search-form-control {
   position: relative;
   width: 50vw;
@@ -35,6 +35,7 @@
 }
 
 .banner h1 {
+  padding-top: 100px;
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -51,9 +52,34 @@
 
 
 
+// CARDS UNDER BANNER
+
+
+.container-homepage-card{
+  padding: 50px;
+}
+
+.title-homepage-card p{
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 20px;
+  font-weight:bold;
+  padding-bottom: 20px;
+}
+
+.btn-homepage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
 
 // FOOTER
 .footer {
+  margin-top: 20px;
   background: #F4F4F4;
   display: flex;
   align-items: center;
