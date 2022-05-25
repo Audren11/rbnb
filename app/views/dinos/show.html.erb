@@ -1,20 +1,43 @@
-<div class="dino_page">
- <p> < <%= link_to "Back", dinos_path %><p>
-  <div class="dino_container">
-    <div class="description_dino">
-      <div class="description_image">
+<div class="my-container">
+   <div class="row">
+     <div class="col-sm">
+        <div class="card " style="width: 500px">
+          <div class="card-header">
+            <%=@dino.name  %>
+          </div>
+          <img src="https://i.etsystatic.com/18854467/r/il/98d65a/3574197919/il_fullxfull.3574197919_olfx.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <div class="bar">
+              <h5><%=@dino.specie  %></h5>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
+            </div>
+            <p class="fst-italic"> <%= @dino.place %></p>
+          </div>
+          <div class="text-center">
+            A savoir sur <%=@dino.name %> :
+            <p><%= @dino.characteristic%></p>
+            Description:
+            <p><%= @dino.description%></p>
+          </div>
+        </div>
+       </div>
+     </div>
 
-      </div>
-      <div class="description">
-        <%# <p><%= "#{dino.name}, #{dino.specie}, #{dino.characteristic}, #{dino.price}, #{dino.description}, #{dino.place}" %></p> %>
-        <%# <p><%= cl_image_tag(@dino.user.photo.key, width: 50, height: 45, class: "avatar dropdown-toggle", crop: :fill) %> Contact <%= @dino.user.first_name.capitalize %> </p> %>
+
+      <div class="col-sm">
+        <div class="card" style="width: 65%">
+          <div class="card-header">
+            <p><%=@dino.price%>€/jour</p>
+          </div>
+          <div class="card-buttons text-center">
+            <div class="begin-end"></div>
+            <div class="btn btn-dark btn-sm btn-block">Réserver</div>
+          </div>
+          <div class="card-details d-flex justify-content-between">
+            <p><%=@dino.price%>x 4</p> <p><%= @dino.price*4%>€</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-
-
-
-
-
 </div>
+  <%# <% end %>

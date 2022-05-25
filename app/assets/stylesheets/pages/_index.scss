@@ -1,8 +1,9 @@
 // Import page-specific CSS files here.
 @import "home";
 
+
 // BACKGROUND
-body::before {
+body {
   background-image: url(pages/images/jungle3.jpg);
   background-size: cover;
   width: 100%;
@@ -10,8 +11,9 @@ body::before {
   position: fixed;
   content: "";
   top: 0; left: 0;
-  filter: brightness(50%);
+  // filter: brightness(50%);
 }
+
 
 // CARD LOOK
 .card {
@@ -23,11 +25,7 @@ body::before {
   block-size: 400px;
 }
 
-.card > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
+
 
 
 // TITLES SIZES
