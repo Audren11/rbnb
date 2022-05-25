@@ -1,69 +1,70 @@
 <div class="container-fluid">
-  <%# <div class="row"> %>
-  <div class="card" style="width: 35%">
-    <h5> Tarif : </h5>
-    <p><%=@dino.price%>€/jour</p>
-    <br>
-    <h5> Nombre de jours : </h5>
-    <p>4</p>
-    <br>
-    <h5> Total </h5>
-    <p><%= @dino.price*4%>€</p>
+
+  <div class="cards align-items-center">
+    <div class="card-category">
+      <%# MAP %>
+      <% if @dino.photo.attached? %>
+        <div class="card-image-dino" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @dino.photo.key, crop: :fill %>')">
+        </div>
+      <% else %>
+        <p>Pas d'image.</p>
+      <% end %>
+    </div>
+    <div class="card-category ">
+      <div class="container-booking" style="margin: 150px; min-width: 500px; padding: 30px 30px 60px 30px; background-color: white; font-family: Helvetica; font-weight: 600; color: #484848;">
+        <h5><strong> Nom </h5>
+        <p><%= @dino.name %></strong></p>
+        <br>
+        <h5> Espèce </h5>
+        <p><%= @dino.specie %></p>
+        <br>
+        <h5> Localisation </h5>
+        <p><%= @dino.place %></p>
+        <br>
+        <h5> Cacactéristiques </h5>
+        <p><%= @dino.characteristic %></p>
+        <br>
+        <h5><strong>Description </strong></h5>
+        <p><%= @dino.description %></p>
+      </div>
+    </div>
+    <div class="card-category">
+      <form class="container-booking " style="margin: 150px; padding: 30px 30px 60px 30px; background-color: white; font-family: Helvetica; font-weight: 600; color: #484848;">
+        <h1 style="font-size: 2em; font-weight: bold; margin-bottom: 15px;">Book <% @dino.name %></h1>
+        <div class="form-group" style=" font-size: small;">
+          <label>Localisation</label><br>
+          <input class="form-control" type="text" placeholder="Où chercher un dino" name="destination" />
+        </div>
+        <div class="input-group-prepend" style=" font-size: small;">
+          <label>Début de la réservation</label> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+          <label>Fin de la réservation</label><br>
+        </div>
+        <div class="input-group" style=" font-size: small;">
+          <input class="form-control" type="date" placeholder="dd-mm-yyyy" name="checkin" />
+          <input class="form-control" type="date" placeholder="dd-mm-yyyy" name="checkout" />
+        </div>
+        <%# TOTAL PRICE %>
+        <div class="row">
+          <div class="col-75">
+            <form action="/action_page.php">
+          <div class="col-25">
+            <i class="fa fa-shopping-cart"></i>
+            <h4>Réservation</h4>
+            <p><a href="#">Dino</a> <span class="price-reservation"> ------------------------------ $15</span></p>
+            <p><a href="#">Taxes</a> <span class="price-reservation"> ------------------------------ $5</span></p>
+            <p>Total </p class="price" style="color:black"><b>$20</b>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-green" style="float: right;">Réserver</button>
+        </div>
+      </form>
+    </div>
   </div>
-    <div class="container-card">
-      <%# <div class="listing col"> %>
-        <div class="card" style="width: 65%">
-          <div class="listing-title">
-              <h5><strong> Nom :</h5>
-              <p><%= @dino.name %></strong></p>
-              <br>
-              <h5> Espèce :</h5>
-              <p><%= @dino.specie %></p>
-              <br>
-              <h5> Localisation :</h5>
-              <p><%= @dino.place %></p>
-              <br>
-              <h5> Cacactéristiques :</h5>
-              <p><%= @dino.characteristic %></p>
-              <br>
-              <h5><strong>Description : </strong></h5>
-              <p><%= @dino.description %></p>
 
-          </div><br>
-        </div>
-      </div>
-    </div>
-  <%# </div> %>
 
-    <form class="container-booking " style="margin: 150px; max-width: 420px; padding: 30px 30px 60px 30px; background-color: white; font-family: Helvetica; font-weight: 600; color: #484848;">
-    <h1 style="font-size: 2em; font-weight: bold; margin-bottom: 15px;">Book <% @dino.name %></h1>
-      <div class="form-group" style=" font-size: small;">
-        <label>Localisation</label><br>
-        <input class="form-control" type="text" placeholder="Où chercher un dino" name="destination" />
-      </div>
-      <div class="input-group-prepend" style=" font-size: small;">
-        <label>Début de la réservation</label> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-        <label>Fin de la réservation</label><br>
-      </div>
-      <div class="input-group" style=" font-size: small;">
-        <input class="form-control" type="date" placeholder="dd-mm-yyyy" name="checkin" />
-        <input class="form-control" type="date" placeholder="dd-mm-yyyy" name="checkout" />
-      </div>
-      <%# TOTAL PRICE %>
-      <div class="row">
-        <div class="col-75">
-          <form action="/action_page.php">
-        <div class="col-25">
-          <i class="fa fa-shopping-cart"></i>
-          <h4>Réservation</h4>
-          <p><a href="#">Dino</a> <span class="price-reservation"> ------------------------------ $15</span></p>
-          <p><a href="#">Taxes</a> <span class="price-reservation"> ------------------------------ $5</span></p>
-          <p>Total </p class="price" style="color:black"><b>$20</b>
-        </div>
-      </div>
-    <div class="form-group">
-      <button type="submit" class="btn btn-green" style="float: right;">Réserver</button>
-    </div>
-  </form>
+
+
+
 
 </div>
