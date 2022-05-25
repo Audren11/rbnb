@@ -1,0 +1,21 @@
+.listing-title h5 {
+   text-align: center;
+   text-decoration: underline;
+   font-size: medium;
+}
+
+.listing-title p {
+  text-align: center;
+  font-size: large;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: center;
+
+}
+
+.container-card {
+  width: 1000px;
+  height: 500px;
+}
