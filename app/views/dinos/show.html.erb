@@ -1,11 +1,17 @@
 <div class="my-container">
+
    <div class="row">
+   
      <div class="col-sm">
         <div class="card " style="width: 500px">
           <div class="card-header">
             <%=@dino.name  %>
           </div>
-          <img src="https://i.etsystatic.com/18854467/r/il/98d65a/3574197919/il_fullxfull.3574197919_olfx.jpg" class="card-img-top" alt="...">
+            <% if dino.photo.attached? %>
+              <%= cl_image_tag dino.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+              <p>Pas d'image.</p>
+            <% end %>
           <div class="card-body">
             <div class="bar">
               <h5><%=@dino.specie  %></h5>
