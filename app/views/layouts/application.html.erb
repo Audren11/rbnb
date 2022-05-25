@@ -26,6 +26,9 @@
     </div>
   <% end %>
 
+
+
+
   <%# NAVBAR %>
       <div class="navbar navbar-expand-sm navbar-light navbar-dino">
         <div class="container-fluid">
@@ -33,10 +36,18 @@
             <%= image_tag "https://res.cloudinary.com/df6z4mw2e/image/upload/v1653472873/development/Dinosaur-Emblem-Stegosaurus-Graphics-3665951-1-1-580x386_j9lown.jpg", class: "logo" %>
           <% end %>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <%# SEARCH BAR %>
+       <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+        <div class="search-form-control form-group">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="btn btn-flat btn-outline-secondary">
+            <i class="fas fa-search"></i> Search
           </button>
+        </div>
+      <% end %>
 
+
+          <%# LOGIN %>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto">
               <% if user_signed_in? %>
@@ -63,7 +74,7 @@
           </div>
         </div>
       </div>
-      
+
     <%= yield %>
 
     <%# FOOTER %>
