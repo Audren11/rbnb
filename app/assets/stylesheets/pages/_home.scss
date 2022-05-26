@@ -33,8 +33,6 @@
 
 
 // CARDS UNDER BANNER
-
-
 .container-homepage-card{
   padding: 50px;
 }
@@ -55,12 +53,10 @@
   width: 100%;
 }
 
-
-
 // FOOTER
-
 .footer {
-  margin-top: 20px;
+  width: 100%;
+  // margin-top: 20px;
   background: #F4F4F4;
   display: flex;
   align-items: center;
@@ -82,7 +78,7 @@
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  color: #5FC6B2 !important;
+  color: #5FC6B2;
 }
 
 .fa-heart::before {

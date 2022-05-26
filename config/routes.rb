@@ -8,11 +8,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   namespace :owner do
-    resources :bookings, only: [:index, :create] do
+    resources :bookings, only: [:index] do
       member do
         patch :approve, :reject
-      #   post '/approve', to: 'bookings#approve'
-      #   post '/decline', to: 'bookings#decline'
       end
     end
     resources :dinos, only: [:new, :create]

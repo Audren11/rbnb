@@ -13,28 +13,25 @@
   </head>
 
   <body>
-  <% if notice %>
-    <div class="alert alert-info alert-dismissible fade show m-1" role="alert">
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      <%= notice %>
-    </div>
-  <% end %>
-  <% if alert %>
-    <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      <%= alert %>
-    </div>
-  <% end %>
-
-
-
+    <% if notice %>
+      <div class="alert alert-info alert-dismissible fade show m-1" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <%= notice %>
+      </div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <%= alert %>
+      </div>
+    <% end %>
 
   <%# NAVBAR %>
-      <div class="navbar navbar-expand-sm navbar-light navbar-dino">
-        <div class="container-fluid">
-          <%= link_to "#", class: "navbar-brand" do %>
-            <%= image_tag "https://res.cloudinary.com/df6z4mw2e/image/upload/v1653472873/development/Dinosaur-Emblem-Stegosaurus-Graphics-3665951-1-1-580x386_j9lown.jpg", class: "logo" %>
-          <% end %>
+    <div class="navbar navbar-expand-sm navbar-light navbar-dino">
+      <div class="container-fluid">
+        <%= link_to "/", class: "navbar-brand" do %>
+          <%= image_tag "https://res.cloudinary.com/df6z4mw2e/image/upload/v1653472873/development/Dinosaur-Emblem-Stegosaurus-Graphics-3665951-1-1-580x386_j9lown.jpg", class: "logo" %>
+        <% end %>
 
           <%# Research BAR %>
         <%= form_tag dinos_path, method: :get, class: "d-flex justify-content-center " do %>
@@ -50,7 +47,8 @@
           </div>
         <% end %>
 
-          <%# LOGIN %>
+
+        <%# LOGIN %>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto">
               <% if user_signed_in? %>
@@ -75,24 +73,23 @@
               <% end %>
             </ul>
           </div>
-        </div>
       </div>
+    </div>
 
     <%= yield %>
 
-    <%# FOOTER %>
+  <%# FOOTER %>
     <footer>
-      <div id="footer">
-          <div class="footer-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-          </div>
-          <div class="footer-copyright">
-            Made with <i class="fas fa-heart"></i> by team Heroes
-          </div>
+      <div class="footer">
+        <div class="footer-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+          Made with <i class="fas fa-heart"></i> by team Heroes
         </div>
       </div>
     </footer>
