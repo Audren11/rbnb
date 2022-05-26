@@ -30,11 +30,8 @@
     </div>
     <div class="card-category">
       <form class="container-booking " style="margin: 150px; padding: 30px 30px 60px 30px; background-color: white; font-family: Helvetica; font-weight: 600; color: #484848;">
-        <h1 style="font-size: 2em; font-weight: bold; margin-bottom: 15px;">Book <% @dino.name %></h1>
-        <div class="form-group" style=" font-size: small;">
-          <label>Localisation</label><br>
-          <input class="form-control" type="text" placeholder="Où chercher un dino" name="destination" />
-        </div>
+        <h1 style="font-size: 2em; font-weight: bold; margin-bottom: 15px;"> Réserver <% @dino.name %></h1>
+        <h2 style="font-size: 2em; font-weight: bold; margin-bottom: 15px;"> <% @dino.name %></h1>
         <div class="input-group-prepend" style=" font-size: small;">
           <label>Début de la réservation</label> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
           <label>Fin de la réservation</label><br>
@@ -52,7 +49,7 @@
             <h4>Réservation</h4>
             <p><a href="#">Dino</a> <span class="price-reservation"> ------------------------------ $15</span></p>
             <p><a href="#">Taxes</a> <span class="price-reservation"> ------------------------------ $5</span></p>
-            <p>Total </p class="price" style="color:black"><b>$20</b>
+            <p>Total </p class="price" style="color:black"><b>$20/jour</b>
           </div>
         </div>
         <div class="form-group">
@@ -60,11 +57,12 @@
         </div>
       </form>
     </div>
+
+    <%= simple_form_for [ @dino, @booking ] do |f| %>
+      <%= f.input :checkin_on, as: :date, html5: true %>
+      <%= f.input :checkout_on, as: :date, html5: true %>
+      <%= f.submit "Réserver", class: "btn btn-primary" %>
+
+    <% end %>
   </div>
-
-
-
-
-
-
 </div>
