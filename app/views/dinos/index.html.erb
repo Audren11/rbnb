@@ -1,48 +1,50 @@
 <!-- CARD-->
 
-<div class="container">
-  <div class="row g-5">
-    <% @dinos.each do |dino| %>
-      <div class="col position-card-dino">
-        <%= link_to dino_path(dino), class: "text-decoration-none" do %>
-          <div class="card" style="width: 18rem;">
-            <div class="card-header">
-              <%= dino.name %>
+<div class="index-container">
+  <div class="row w-100">
+
+    <div class="col-8 cards">
+      <% @dinos.each do |dino| %>
+        <div class="col position-card-dino">
+          <%= link_to dino_path(dino), class: "text-decoration-none" do %>
+            <div class="card" style="width: 18rem;">
+              <div class="card-header">
+                <%= dino.name %>
+              </div>
+
+              <% if dino.photo.attached? %>
+                <div class="card-image-dino" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path dino.photo.key, height: 300, crop: :fill %>')">
+                </div>
+              <% else %>
+                <p>Pas d'image.</p>
+              <% end %>
+
+              <div class="card-body d-flex flex-column justify-content-between">
+
+                <div class="d-flex flex-column justify-content-between">
+                    <div class="bar">
+                      <h5><%= dino.specie %></h5>
+                      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
+                    </div>
+                    <p class="fst-italic"> <%= dino.place %></p>
+                </div>
+
+                <div class="description d-flex justify-content-between">
+                  <h6><%= dino.characteristic %></h6>
+                  <h2 class="card-pricing d-flex align-items-center"><%= dino.price%>€</h2>
+                </div>
+              </div>
             </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 
-            <% if dino.photo.attached? %>
-              <div class="card-image-dino" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path dino.photo.key, height: 300, crop: :fill %>')">
-              </div>
-            <% else %>
-              <p>Pas d'image.</p>
-            <% end %>
 
-            <div class="card-body d-flex flex-column justify-content-between">
-
-              <div class="d-flex flex-column justify-content-between">
-                  <div class="bar">
-                    <h5><%= dino.specie %></h5>
-                    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
-                  </div>
-                  <p class="fst-italic"> <%= dino.place %></p>
-              </div>
-
-              <div class="description d-flex justify-content-between">
-                <h6><%= dino.characteristic %></h6>
-                <h2 class="card-pricing d-flex align-items-center"><%= dino.price%>€</h2>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+    <div class="col-4 map-index"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>
-
-
-
-
-<%# AJOUT NAV BAR
-GESTION TAILE CARD VS TEXTE (Leopold) %>
-<%# AJOUT DES PHOTOS %>
-<%# Cliquable %>
