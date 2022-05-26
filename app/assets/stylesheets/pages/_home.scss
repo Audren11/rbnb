@@ -4,9 +4,13 @@
   text-align: center;
 }
 
+.btn-search {
+  color: white;
+}
+
 // BANNER
 .banner {
-  // background-size: cover;
+  background-size: cover;
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.hdqwalls.com/wallpapers/dino-history.jpg);
   // background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url(dino-history.jpg);
   background-position-x: 40%;
@@ -54,7 +58,21 @@
 }
 
 // FOOTER
+// .wrapper {
+//   min-height: 100%;
+
+//   /* Equal to height of footer */
+//   /* But also accounting for potential margin-bottom of last child */
+//   margin-bottom: -50px;
+// }
+// .footer,
+// .push {
+//   height: 50px;
+// }
+
 .footer {
+  // position: fixed;
+  // bottom: 0;
   width: 100%;
   // margin-top: 20px;
   background: #F4F4F4;
@@ -83,4 +101,20 @@
 
 .fa-heart::before {
   color: #D23333;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.min-h-screen {
+  min-height: calc(100vh - 200px) !important;
 }

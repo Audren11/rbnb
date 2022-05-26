@@ -1,12 +1,32 @@
 @import "home";
 
-.cards {
+.opacite{
+  opacity: 0.93;
+}
+.cards-show-dino {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1px;
   margin-bottom: 20px;
 }
 
+.details-total {
+  padding-bottom: 10px;
+}
+
+.container-booking {
+  font-weight: 600;
+  color: #484848;
+}
+
+.btn-resa {
+padding: 10px;
+width:210px;
+}
+
+.price-reservation > p {
+  font-size: 10px;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
