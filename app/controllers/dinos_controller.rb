@@ -1,8 +1,17 @@
 class DinosController < ApplicationController
   before_action :set_dino, only: [:show, :destroy]
 
+
   def index
     @dinos = Dino.all
+    @markers = @dinos.geocoded.map do |dino|
+      {
+        lat: dino.latitude,
+        lng: dino.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { dino: dino }),
+        image_url: helpers.asset_url('pointer.png')
+      }
+    end
   end
 
   def new
@@ -24,6 +33,7 @@ class DinosController < ApplicationController
     @checkout = params['checkout_on']
     @booking = Booking.new
   end
+
 
   def destroy
     @dino.destroy
