@@ -3,17 +3,18 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :dinos, only: [:index, :show] do
-    resources :bookings, only: :create
+    resources :bookings, only: [:create, :update]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   namespace :owner do
-    resources :bookings, only: [:index] do
+    resources :bookings, only: [] do
       member do
-        patch :approve, :reject
+        patch :approve
+        patch :reject
       end
     end
-    resources :dinos, only: [:new, :create]
+    resources :dinos, only: [:new, :create, :index]
   end
   resource :dashboard, only: :show
 end
