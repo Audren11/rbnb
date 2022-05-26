@@ -43,7 +43,7 @@
                 placeholder: "Trouvez votre dino"
               %>
             </div>
-              <%= submit_tag "Rechercher", class: "btn btn-primary" %>
+              <%= submit_tag "Rechercher", class: "btn-search btn btn-primary" %>
           </div>
         <% end %>
 
@@ -75,10 +75,14 @@
           </div>
       </div>
     </div>
-
-    <%= yield %>
+    <div class="min-h-screen">
+      <%= yield %>
+    </div>
 
   <%# FOOTER %>
+  <%# <div class="wrapper">
+    <div class="push"></div>
+  </div> %>
     <footer>
       <div class="footer">
         <div class="footer-links">

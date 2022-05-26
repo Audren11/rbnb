@@ -1,35 +1,71 @@
-<div class="container-fluid">
+<div class="">
 
-  <div class="cards align-items-center">
-    <div class="card-category">
-      <%# MAP %>
-      <% if @dino.photo.attached? %>
-        <div class="card-image-dino" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @dino.photo.key, crop: :fill %>')">
+  <div class="d-flex mx-5 p-5">
+
+    <div class="opacite w-75 mr-5 rounded">
+      <div class="bg-white rounded text-danger d-flex h-100 overflow-hidden">
+        <% if @dino.photo.attached? %>
+          <div class="w-50 bg-center bg-cover" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @dino.photo.key, crop: :fill %>')">
+          </div>
+        <% else %>
+          <p>Pas d'image.</p>
+        <% end %>
+
+        <div class="w-50 p-5">
+          <h5><strong> Nom </h5>
+          <p><%= @dino.name %></strong></p>
+          <br>
+          <h5> Espèce </h5>
+          <p><%= @dino.specie %></p>
+          <br>
+          <h5> Localisation </h5>
+          <p><%= @dino.place %></p>
+          <br>
+          <h5> Cacactéristiques </h5>
+          <p><%= @dino.characteristic %></p>
+          <br>
+          <h5><strong>Description </strong></h5>
+          <p><%= @dino.description %></p>
         </div>
-      <% else %>
-        <p>Pas d'image.</p>
-      <% end %>
-    </div>
-    <div class="card-category ">
-      <div class="container-booking" style="margin: 150px; min-width: 500px; padding: 30px 30px 60px 30px; background-color: white; font-family: Helvetica; font-weight: 600; color: #484848;">
-        <h5><strong> Nom </h5>
-        <p><%= @dino.name %></strong></p>
-        <br>
-        <h5> Espèce </h5>
-        <p><%= @dino.specie %></p>
-        <br>
-        <h5> Localisation </h5>
-        <p><%= @dino.place %></p>
-        <br>
-        <h5> Cacactéristiques </h5>
-        <p><%= @dino.characteristic %></p>
-        <br>
-        <h5><strong>Description </strong></h5>
-        <p><%= @dino.description %></p>
       </div>
     </div>
-    <div class="card-category">
-      <form class="container-booking " style="margin: 150px; padding: 30px 30px 60px 30px; background-color: white; font-family: Helvetica; font-weight: 600; color: #484848;">
+
+
+    <div class="opacite w-25 mx-5 bg-white p-5 rounded">
+    
+    <div class="form-resa">
+      <%= simple_form_for [ @dino, @booking ] do |f| %>
+        <h1 style="font-size: 2em; font-weight: bold; margin-bottom: 15px;"> Réserver <% @dino.name %></h1>
+        <%= f.input :checkin_on, as: :date, html5: true %>
+        <%= f.input :checkout_on, as: :date, html5: true %>
+      </div>
+
+      <div class="details-total">
+        <div class="row">
+          <div class="col-75">
+            <form action="/action_page.php">
+
+          <div class="col-25">
+            <h4><i class="fa fa-shopping-cart"></i> <span> Détails</h4></span>
+            <p><a href="#">Dino</a> <span class="price-reservation"> --------------- <% @dino.price %></span></p>
+            <p>Taxes<span class="price-reservation"> -------------- 1,50€</span></p>
+            <span><h5><b>TOTAL</b> ----------- <b><%@booking.total_price%></b></span></h5 class="price" style="color:black">
+          </div>
+        </div>
+
+        <%= f.submit "Réserver", class: "btn-resa btn btn-green" %>
+
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+<!-- FORM EXEMPLE
+
+Source: https://prograide.com/pregunta/21689/bloquer-les-commentaires-en-htmlerb-modles-dans-les-rails
+     <form class="container-booking " style="margin: 150px; padding: 30px 30px 60px 30px; background-color: white; font-family: Helvetica; font-weight: 600; color: #484848;">
         <h1 style="font-size: 2em; font-weight: bold; margin-bottom: 15px;"> Réserver <% @dino.name %></h1>
         <h2 style="font-size: 2em; font-weight: bold; margin-bottom: 15px;"> <% @dino.name %></h1>
         <div class="input-group-prepend" style=" font-size: small;">
@@ -56,13 +92,5 @@
           <button type="submit" class="btn btn-green" style="float: right;">Réserver</button>
         </div>
       </form>
-    </div>
-    <%= @booking.total_price %>
-    <%= simple_form_for [ @dino, @booking ] do |f| %>
-      <%= f.input :checkin_on, as: :date, html5: true %>
-      <%= f.input :checkout_on, as: :date, html5: true %>
-      <%= f.submit "Réserver", class: "btn btn-primary" %>
+-->
 
-    <% end %>
-  </div>
-</div>

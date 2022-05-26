@@ -1,61 +1,87 @@
-<%# BANNER %>
-<div class="banner">
-  <div class="container">
-    <h1>DinoBnB vous aide à trouver le meilleur dino pour vous!</h1>
-    <p>Il est peut-être à côté de chez vous...</p>
-    <%= link_to "Je veux découvrir plus de 10000 dinos !", dinos_path, class: "btn-green" %>
+<div class="d-flex flex-column">
+
+
+  <%# BANNER %>
+  <div class="banner">
+    <div class="container">
+      <h1>DinoBnB vous aide à trouver le meilleur dino pour vous!</h1>
+      <p>Il est peut-être à côté de chez vous...</p>
+      <%= link_to "Je veux découvrir plus de 10000 dinos !", dinos_path, class: "btn-green" %>
+    </div>
   </div>
-</div>
-<div>
+  <div class="colorspace w-100 p-4 row m-0">
+    <h2 class=" d-flex justify-content-center mb-4">A better way to send money.</h2>
+    <div class="col-4">
+      <div class="d-flex align-items-center justify-content-left text-white">
+        <i class="fab fa-github bg-primary p-2 rounded ms-2"></i>
+      </div>
+      <h3 class="mt-5">Competitive exchange rates</h3>
+      <div class="mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</div>
+    </div>
 
+    <div class="col-4">
+      <div class="d-flex align-items-center justify-content-left text-white">
+        <i class="fab fa-github bg-primary p-2 rounded ms-2"></i>
+      </div>
+      <h3 class="mt-5">Competitive exchange rates</h3>
+      <div class="mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</div>
+    </div>
 
-
-<%#  CARDS UNDER BANNER  %>
-<div class="container-homepage-card">
-  <div class="title-homepage-card">
-    <p> Les dinos les plus demandés : </p>
-  </div>
-    <div class="row g-5">
-      <% @dinos.first(4).each do |dino| %>
-        <div class="col">
-          <%= link_to dino_path(dino), class: "text-decoration-none" do %>
-            <div class="card" style="width: 18rem;">
-              <div class="card-header">
-                <%= dino.name %>
-              </div>
-
-              <% if dino.photo.attached? %>
-                <%= cl_image_tag dino.photo.key, height: 300, width: 400, crop: :fill %>
-              <% else %>
-                <p>Pas d'image.</p>
-              <% end %>
-
-              <div class="card-body d-flex flex-column justify-content-between">
-
-                <div class="d-flex flex-column justify-content-between">
-                    <div class="bar">
-                      <h5><%= dino.specie %></h5>
-                      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
-                    </div>
-                    <p class="fst-italic"> <%= dino.place %></p>
-                </div>
-
-                <div class="description d-flex justify-content-between">
-                  <h6><%= dino.characteristic %></h6>
-                  <h2 class="card-pricing d-flex align-items-center"><%= dino.price%>€</h2>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+    <div class="col-4">
+      <div class="d-flex align-items-center justify-content-left text-white">
+        <i class="fab fa-github bg-primary p-2 rounded ms-2"></i>
+      </div>
+      <h3 class="mt-5">Competitive exchange rates</h3>
+      <div class="mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</div>
     </div>
   </div>
 
-  <div class="btn-homepage">
-    <%= link_to "Voir plus de dinos", dinos_path, class: "btn-green" %>
+  <%#  CARDS UNDER BANNER  %>
+  <div class="container-homepage-card">
+    <div class="title-homepage-card">
+      <p> Les dinos les plus demandés : </p>
+    </div>
+      <div class="row g-5">
+        <% @dinos.first(4).each do |dino| %>
+          <div class="col">
+            <%= link_to dino_path(dino), class: "text-decoration-none" do %>
+              <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                  <%= dino.name %>
+                </div>
+
+                <% if dino.photo.attached? %>
+                  <%= cl_image_tag dino.photo.key, height: 300, width: 400, crop: :fill %>
+                <% else %>
+                  <p>Pas d'image.</p>
+                <% end %>
+
+                <div class="card-body d-flex flex-column justify-content-between">
+
+                  <div class="d-flex flex-column justify-content-between">
+                      <div class="bar">
+                        <h5><%= dino.specie %></h5>
+                        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
+                      </div>
+                      <p class="fst-italic"> <%= dino.place %></p>
+                  </div>
+
+                  <div class="description d-flex justify-content-between">
+                    <h6><%= dino.characteristic %></h6>
+                    <h2 class="card-pricing d-flex align-items-center"><%= dino.price%>€</h2>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="btn-homepage">
+      <%= link_to "Voir plus de dinos", dinos_path, class: "btn-green" %>
+    </div>
   </div>
-</div>
 
 
 <div class="container-homepage-card">
@@ -64,7 +90,7 @@
   </div>
     <div class="row g-5">
       <% @dinos.last(8).each do |dino| %>
-        <div class="col">
+        <div class="col  position-card-dino">
           <%= link_to dino_path(dino), class: "text-decoration-none" do %>
             <div class="card" style="width: 18rem;">
               <div class="card-header">
@@ -72,34 +98,39 @@
               </div>
 
               <% if dino.photo.attached? %>
-                <%= cl_image_tag dino.photo.key, height: 300, width: 400, crop: :fill %>
+                <div class="card-image-dino" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path dino.photo.key, height: 300, crop: :fill %>')">
+                </div>
               <% else %>
                 <p>Pas d'image.</p>
               <% end %>
 
-              <div class="card-body d-flex flex-column justify-content-between">
 
-                <div class="d-flex flex-column justify-content-between">
-                    <div class="bar">
-                      <h5><%= dino.specie %></h5>
-                      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
-                    </div>
-                    <p class="fst-italic"> <%= dino.place %></p>
-                </div>
+                <div class="card-body d-flex flex-column justify-content-between">
 
-                <div class="description d-flex justify-content-between">
-                  <h6><%= dino.characteristic %></h6>
-                  <h2 class="card-pricing d-flex align-items-center"><%= dino.price%>€</h2>
+                  <div class="d-flex flex-column justify-content-between">
+                      <div class="bar">
+                        <h5><%= dino.specie %></h5>
+                        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
+                      </div>
+                      <p class="fst-italic"> <%= dino.place %></p>
+                  </div>
+
+                  <div class="description d-flex justify-content-between">
+                    <h6><%= dino.characteristic %></h6>
+                    <h2 class="card-pricing d-flex align-items-center"><%= dino.price%>€</h2>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="btn-homepage">
+      <%= link_to "Voir plus de dinos", dinos_path, class: "btn-green" %>
     </div>
   </div>
 
-  <div class="btn-homepage">
-    <%= link_to "Voir plus de dinos", dinos_path, class: "btn-green" %>
-  </div>
+
 </div>
