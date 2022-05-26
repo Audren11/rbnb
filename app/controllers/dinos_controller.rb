@@ -1,4 +1,5 @@
 class DinosController < ApplicationController
+  before_action :set_dino, only: [:show, :destroy]
 
   def index
     @dinos = Dino.all
@@ -19,11 +20,15 @@ class DinosController < ApplicationController
   end
 
   def show
-    set_dino
-    @dino = Dino.find(params[:id])
+    @checkin = params['checkin_on']
+    @checkout = params['checkout_on']
+    @booking = Booking.new
   end
 
-
+  def destroy
+    @dino.destroy
+    redirect_to root_path
+  end
 
   private
 
@@ -34,4 +39,5 @@ class DinosController < ApplicationController
   def dino_params
     params.require(:dino).permit(:name, :specie, :characteristic, :price, :description, :place)
   end
+
 end
