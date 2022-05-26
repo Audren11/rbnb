@@ -9,7 +9,15 @@ class DinosController < ApplicationController
       else
         @dinos = Dino.all
       end
-    #  @dinos = Dino.all
+
+      @markers = @dinos.geocoded.map do |dino|
+        {
+          lat: dino.latitude,
+          lng: dino.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { dino: dino }),
+          image_url: helpers.asset_url('pointer.png')
+        }
+      end
   end
 
   def new
