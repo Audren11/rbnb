@@ -57,7 +57,7 @@
         </div>
       </form>
     </div>
-
+    <%= @booking.total_price %>
     <%= simple_form_for [ @dino, @booking ] do |f| %>
       <%= f.input :checkin_on, as: :date, html5: true %>
       <%= f.input :checkout_on, as: :date, html5: true %>

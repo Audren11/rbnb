@@ -5,6 +5,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.dino = @dino
     @booking.user = current_user
+    @booking.total_price = @dino.price * (((@booking.checkout_on - @booking.checkin_on) / 86_400) + 1)
+    @booking.status = "pending"
     if @booking.save
       redirect_to dashboard_path
     else
@@ -16,6 +18,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user_id: current_user.id)
     # dashboard
   end
+
 
   private
 

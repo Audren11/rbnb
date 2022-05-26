@@ -1,6 +1,40 @@
 <h1>Dashboard#show</h1>
 <p>Find me in app/views/dashboard/show.html.erb</p>
 
-<%= @my_bookings.each do |booking| %>
-<%= booking.dino.id %>
-<%= end %>
+
+<div class="d-flex">
+
+  <div class="w-50  bg-primary p-5">
+  <% @bookings.each do |booking| %>
+  <div class="bg-danger mb-3 p-3 rounded d-flex">
+    <div class="w-25">
+      <%= cl_image_tag booking.dino.photo.key, height: 200, width: 200 %>
+    </div>
+    <div class="p-3 w-75">
+      <%= booking.status %>
+      <%= booking.dino.user.first_name %>
+    </div>
+  </div>
+
+  <% end %>
+  </div>
+
+  <div class="w-50  bg-secondary p-5">
+  <% @my_bookings.each do |booking| %>
+    <ul>
+      <li>
+        <%= booking.status %>
+        <%= booking.user.first_name %>
+      </li>
+      <li>
+        <%= link_to "accepter", approve_owner_booking_path(booking), method: :patch %>
+      </li>
+      <li>
+        <%= link_to "refuser", reject_owner_booking_path(booking), method: :patch %>
+      </li>
+
+    </ul>
+
+  <% end %>
+  </div>
+</div>
