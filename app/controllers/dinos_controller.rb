@@ -20,6 +20,7 @@ class DinosController < ApplicationController
 
   def show
     set_dino
+    @dino = Dino.find(params[:id])
   end
 
 
