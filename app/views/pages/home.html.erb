@@ -36,23 +36,6 @@
     </div>
   </div>
 
-    <div class="row g-5">
-      <% @dinos.first(4).each do |dino| %>
-        <div class="col position-card-dino">
-          <%= link_to dino_path(dino), class: "text-decoration-none" do %>
-            <div class="card" style="width: 18rem;">
-              <div class="card-header">
-                <%= dino.name %>
-              </div>
-
-              <% if dino.photo.attached? %>
-                <div class="card-image-dino" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path dino.photo.key, height: 300, crop: :fill %>')">
-                </div>
-              <% else %>
-                <p>Pas d'image.</p>
-              <% end %>
-
-
   <%#  CARDS UNDER BANNER  %>
   <div class="container-homepage-card">
     <div class="title-homepage-card">
