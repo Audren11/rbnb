@@ -12,6 +12,7 @@
   background-position-x: 40%;
   background-position-y: 0%;
   padding: 150px 0;
+  position: sticky;
 }
 
 .banner h1 {
@@ -83,4 +84,8 @@
 
 .fa-heart::before {
   color: #D23333;
+}
+
+.colorspace {
+  background-color: #FAFDD6;
 }
