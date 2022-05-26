@@ -1,7 +1,14 @@
 class DinosController < ApplicationController
-
   def index
     @dinos = Dino.all
+    @markers = @dinos.geocoded.map do |dino|
+      {
+        lat: dino.latitude,
+        lng: dino.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { dino: dino }),
+        image_url: helpers.asset_url('pointer.png')
+      }
+    end
   end
 
   def new
@@ -22,8 +29,6 @@ class DinosController < ApplicationController
     set_dino
     @dino = Dino.find(params[:id])
   end
-
-
 
   private
 
