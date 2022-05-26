@@ -37,15 +37,18 @@
           <% end %>
 
           <%# SEARCH BAR %>
-       <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-        <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-          <button name="button" type="submit" class="btn btn-flat btn-outline-secondary">
-            <i class="fas fa-search"></i> Search
-          </button>
-        </div>
-      <% end %>
-
+        <%= form_tag dinos_path, method: :get, class: "d-flex justify-content-center " do %>
+          <div class="d-flex justify-content-center">
+            <div class = "barre">
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Trouvez votre dino"
+              %>
+            </div>
+              <%= submit_tag "Rechercher", class: "btn btn-primary" %>
+          </div>
+        <% end %>
 
           <%# LOGIN %>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">

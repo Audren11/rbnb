@@ -1,7 +1,13 @@
 class DinosController < ApplicationController
 
   def index
-    @dinos = Dino.all
+      if params[:query].present?
+        sql_query = "name ILIKE :query OR specie ILIKE :query"
+        @dinos = Dino.where(sql_query, query: "%#{params[:query]}%")
+      else
+        @dinos = Dino.all
+      end
+    #  @dinos = Dino.all
   end
 
   def new
