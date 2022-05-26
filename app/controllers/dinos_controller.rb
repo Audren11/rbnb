@@ -3,15 +3,13 @@ class DinosController < ApplicationController
 
 
   def index
-    @dinos = Dino.all
-    @markers = @dinos.geocoded.map do |dino|
-      {
-        lat: dino.latitude,
-        lng: dino.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { dino: dino }),
-        image_url: helpers.asset_url('pointer.png')
-      }
-    end
+      if params[:query].present?
+        sql_query = "name ILIKE :query OR specie ILIKE :query"
+        @dinos = Dino.where(sql_query, query: "%#{params[:query]}%")
+      else
+        @dinos = Dino.all
+      end
+    #  @dinos = Dino.all
   end
 
   def new
