@@ -9,6 +9,8 @@
 
 .position-card-dino {
   padding-top: 50px;
+  flex-basis: 25%;
+  
 }
 
 .card > img {
@@ -70,11 +72,4 @@
 
 .card-body {
   padding-bottom: 8px;
-}
-
-.card-pricing {
-  // position: absolute
-  // position: relative;
-  // left: 215px; bottom: 200px;
-  // padding-bottom: 24px;
 }
