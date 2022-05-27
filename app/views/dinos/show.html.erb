@@ -26,6 +26,9 @@
           <br>
           <h5><strong>Description </strong></h5>
           <p><%= @dino.description %></p>
+          <br>
+          <h5><strong> Propriétaire </strong></h5>
+          <p><%= "#{@dino.user.first_name} #{@dino.user.last_name}" %></p>
         </div>
       </div>
     </div>
