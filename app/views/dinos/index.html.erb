@@ -31,7 +31,11 @@
 
                 <div class="description d-flex justify-content-between">
                   <h6><%= dino.characteristic %></h6>
-                  <h2 class="card-pricing d-flex align-items-center"><%= dino.price%>€</h2>
+                  <h2 class="card-pricing d-flex align-items-center"><%= dino.price %>€</h2>
+                </div>
+
+                <div class="description d-flex justify-content-between">
+                  <p class="fst-italic"> <%= "#{dino.user.first_name} #{dino.user.last_name}" %> </p>
                 </div>
               </div>
             </div>
