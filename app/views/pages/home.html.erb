@@ -4,42 +4,43 @@
   <%# BANNER %>
   <div class="banner">
     <div class="container">
-      <h1>DinoBnB vous aide à trouver le meilleur dino pour vous!</h1>
+      <h1>Trouvez le meilleur des dinos avec Dino BnB !</h1>
       <p>Il est peut-être à côté de chez vous...</p>
-      <%= link_to "Je veux découvrir plus de 10000 dinos !", dinos_path, class: "btn-green" %>
+      <%= link_to "Plus de 10 000 dinos à découvrir ici !", dinos_path, class: "btn-green" %>
     </div>
   </div>
   <div class="colorspace w-100 p-4 row m-0">
-    <h2 class=" d-flex justify-content-center mb-4">A better way to send money.</h2>
+    <h2 class=" d-flex justify-content-center mb-4">Un choix unique de dinos partout en France.</h2>
     <div class="col-4">
       <div class="d-flex align-items-center justify-content-left text-white">
         <i class="fab fa-github bg-primary p-2 rounded ms-2"></i>
+
       </div>
-      <h3 class="mt-5">Competitive exchange rates</h3>
-      <div class="mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</div>
+      <h4 class="text-justify mt-5">Des dinos mal-élevés</h4>
+      <div class="text-justify mt-2">Pour divertir vos soirées en toute insécurité et dans la peur la plus paralisante.</div>
     </div>
 
     <div class="col-4">
       <div class="d-flex align-items-center justify-content-left text-white">
         <i class="fab fa-github bg-primary p-2 rounded ms-2"></i>
       </div>
-      <h3 class="mt-5">Competitive exchange rates</h3>
-      <div class="mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</div>
+      <h4 class="text-justify mt-5">Un système de paiement facilité.</h4>
+      <div class="text-justify mt-2">Grâce à une monnaie en jetons par un casheless à charger sur notre borne libre-service.</div>
     </div>
 
     <div class="col-4">
       <div class="d-flex align-items-center justify-content-left text-white">
         <i class="fab fa-github bg-primary p-2 rounded ms-2"></i>
       </div>
-      <h3 class="mt-5">Competitive exchange rates</h3>
-      <div class="mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</div>
+      <h4 class="text-justify mt-5">Un SAV de grande qualité.</h4>
+      <div class="text-justify mt-2">Disponible 1h/24h tous les 30 Février de l'année. </div>
     </div>
   </div>
 
   <%#  CARDS UNDER BANNER  %>
   <div class="container-homepage-card">
     <div class="title-homepage-card">
-      <p> Les dinos les plus demandés : </p>
+      <p> - Les dinos les plus demandés - </p>
     </div>
       <div class="row g-5">
         <% @dinos.first(4).each do |dino| %>
@@ -51,7 +52,8 @@
                 </div>
 
                 <% if dino.photo.attached? %>
-                  <%= cl_image_tag dino.photo.key, height: 300, width: 400, crop: :fill %>
+                  <div class="card-image-dino" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path dino.photo.key, height: 300, crop: :fill %>')">
+                  </div>
                 <% else %>
                   <p>Pas d'image.</p>
                 <% end %>
@@ -86,7 +88,7 @@
 
 <div class="container-homepage-card">
   <div class="title-homepage-card">
-    <p> Les derniers dinos ajoutés: </p>
+    <p>- Les derniers dinos ajoutés -</p>
   </div>
     <div class="row g-5">
       <% @dinos.last(8).each do |dino| %>
@@ -127,10 +129,10 @@
       </div>
     </div>
 
-    <div class="btn-homepage">
+    <%# <div class="btn-homepage">
       <%= link_to "Voir plus de dinos", dinos_path, class: "btn-green" %>
-    </div>
-  </div>
+    <%# </div>
+  </div> %>
 
 
 </div>
