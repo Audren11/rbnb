@@ -32,7 +32,7 @@
 
 
     <div class="opacite w-25 mx-5 bg-white p-5 rounded">
-    
+
     <div class="form-resa">
       <%= simple_form_for [ @dino, @booking ] do |f| %>
         <h1 style="font-size: 2em; font-weight: bold; margin-bottom: 15px;"> Réserver <% @dino.name %></h1>
@@ -47,9 +47,8 @@
 
           <div class="col-25">
             <h4><i class="fa fa-shopping-cart"></i> <span> Détails</h4></span>
-            <p><a href="#">Dino</a> <span class="price-reservation"> --------------- <% @dino.price %></span></p>
-            <p>Taxes<span class="price-reservation"> -------------- 1,50€</span></p>
-            <span><h5><b>TOTAL</b> ----------- <b><%@booking.total_price%></b></span></h5 class="price" style="color:black">
+            <p><a href="#">Dino</a> <span class="price-reservation"> --------------- <%= @dino.price %> €/day </span></p>
+            <br>
           </div>
         </div>
 
@@ -93,4 +92,3 @@ Source: https://prograide.com/pregunta/21689/bloquer-les-commentaires-en-htmlerb
         </div>
       </form>
 -->
-
