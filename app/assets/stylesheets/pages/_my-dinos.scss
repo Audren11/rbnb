@@ -1,7 +1,59 @@
-
-
 // OWNER INDEX ALL MY DINOS
-h2 {
+.title-all-my-dinos {
   color: white;
-  padding: 20px;
+  padding-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+ .position-card-dino {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.my-dinos-cards {
+  box-sizing: content-box;
+  margin-bottom: 20px;
+  width: 70%;
+  padding: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  block-size: 500px;
+}
+
+.card-image-my-dino {
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  margin: 20px;
+  border-radius: 20px;
+}
+
+.card-info-my-dino {
+  margin: 7px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+
+.photo-and-text{
+  height: 80%;
+
+}
+.delete-dino {
+  position: absolute;
+  bottom:10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.card-just-description {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }

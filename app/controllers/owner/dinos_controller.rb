@@ -22,6 +22,9 @@ class Owner::DinosController < ApplicationController
   end
 
   def destroy
+    @dino = Dino.find(params[:id])
+    @dino.destroy
+    redirect_to owner_dinos_path
   end
 
 
