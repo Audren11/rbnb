@@ -11,17 +11,20 @@
     <div class="w-35">
       <%= cl_image_tag booking.dino.photo.key, height: 200, width: 200 %>
     </div>
-    <div class="p-10 w-65", style="height: 248px";>
-      <ul>
-        <h5><%= "Status de votre réservation" %></h5>
-        <p><%= booking.status %></p>
-        <h5><%="Nom du propriétaire"%></h5>
-        <p><%= booking.dino.user.first_name %></p>
-        <h5><%="Nom du dino"%></h5>
-        <p><%= booking.dino.name %></p>
-        <h5><%="Lieu de vie du dino"%></h5>
-        <p><%= booking.dino.place %></p>
-      </ul>
+
+    <div class="d-flex">
+      <div class="p-10 w-65", style="height: 248px; width: 450px";>
+        <ul>
+          <h5><%= "Status de votre réservation" %></h5>
+          <p><%= booking.status %></p>
+          <h5><%="Nom du propriétaire"%></h5>
+          <p><%= booking.dino.user.first_name %></p>
+          <h5><%="Nom du dino"%></h5>
+          <p><%= booking.dino.name %></p>
+          <h5><%="Lieu de vie du dino"%></h5>
+          <p><%= booking.dino.place %></p>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -34,8 +37,10 @@
     <ul>
         <h5><%= "Décision de la réservation" %></h5>
          <p><%= booking.status %></p>
-        <h5><%= "Nom du locataire" %></h5>
-        <p><%= booking.user.first_name %></p>
+        <h5><%= "Infos" %></h5>
+        <p><%= "Le locataire #{booking.user.first_name} pour le dino #{booking.dino.name}" %></p>
+        <h5><%= "Dates de réservation" %></h5>
+        <p><%= "Du #{booking.checkin_on} au #{booking.checkout_on}" %></p>
         <%= link_to "Voir le détail de la réservation", root_path %>
           <div class="d-flex" >
           <%= link_to "Accepter", approve_owner_booking_path(booking), method: :patch, class: "btn-green" %>

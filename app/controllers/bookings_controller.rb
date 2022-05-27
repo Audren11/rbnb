@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to dashboard_path
     else
-      redirect_to dino_path(@dino)
+      render "dinos/show  "
     end
   end
 
