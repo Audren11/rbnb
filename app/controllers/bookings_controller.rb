@@ -5,12 +5,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.dino = @dino
     @booking.user = current_user
-    @booking.total_price = @dino.price * (((@booking.checkout_on - @booking.checkin_on) / 86_400) + 1)
-    @booking.status = "pending"
+    @booking.total_price = @dino.price * (((@booking.checkout_on - @booking.checkin_on) / 86_400) + 1) if @booking.checkin_on && @booking.checkout_on
     if @booking.save
       redirect_to dashboard_path
     else
-      render "dinos/show  "
+      render "dinos/show"
     end
   end
 
