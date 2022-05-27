@@ -1,2 +1,32 @@
+<div class="index-container">
+  <div class="row w-100">
 
-<%# <%= cl_image_tag @dino.photo.key, height: 300, width: 400, crop: :fill %> 
+    <div class="col cards-index">
+      <% @my_dinos.each do |my_dino| %>
+        <div class="col position-card-my_dino">
+            <div class="card" style="width: 18rem;">
+              <div class="card-header">
+                <%= my_dino.name %>
+              </div>
+
+                <div class="d-flex flex-column justify-content-between">
+                    <div class="bar">
+                      <h5><%= my_dino.specie %></h5>
+                      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
+                    </div>
+                    <p class="fst-italic"> <%= my_dino.place %></p>
+                </div>
+
+                <div class="description d-flex justify-content-between">
+                  <h6><%= my_dino.characteristic %></h6>
+                  <h2 class="card-pricing d-flex align-items-center"><%= my_dino.price%>€</h2>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

@@ -13,10 +13,10 @@ body {
 }
 
 
-.index-container {
-  display: flex;
-  width: 100%;
-}
+// .index-container {
+//   display: flex;
+//   width: 100%;
+// }
 
 .map-index {
   height: 100vh;
@@ -25,8 +25,17 @@ body {
   bottom: 0;
 }
 
-.cards-index {
+.cards {
   display:grid;
   grid-gap: 10px;
   flex-grow: 1;
+
+}
+
+
+
+// OWNER INDEX ALL MY DINOS
+h2 {
+  color: white;
+  padding: 20px;
 }

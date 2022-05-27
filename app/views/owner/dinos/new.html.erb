@@ -1,7 +1,7 @@
 <h1>Owner::Dinos#new</h1>
 <p>Find me in app/views/owner/dinos/new.html.erb</p>
 
-<%= simple_form_for @dino  do |f| %>
+<%= simple_form_for [:owner, @dino]  do |f| %>
   <%= f.input :name, as: :string, html5: true %>
   <%= f.input :specie, as: :string, html5: true %>
   <%= f.input :characteristic, as: :string, html5: true %>
