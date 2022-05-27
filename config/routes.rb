@@ -14,7 +14,7 @@ Rails.application.routes.draw do
         patch :reject
       end
     end
-    resources :dinos, only: [:new, :create, :index]
+    resources :dinos, only: [:new, :create, :index, :destroy]
   end
   resource :dashboard, only: :show
 end

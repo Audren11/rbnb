@@ -1,40 +1,45 @@
 <div class="index-container">
-  <h2>All my dinos </h2>
-  <div class="row w-100">
+  <div class="title-my-dinos">
+    <h2>- All my dinos -</h2>
+  </div>
+  <div class="row">
 
-    <div class="col cards">
+    <div class="col">
       <% @my_dinos.each do |my_dino| %>
-        <div class="col position-card-my_dino">
-            <div class="card" style="width: 18rem;">
+        <div class="col position-card-dino">
+            <div class="card my-dinos-cards" style="width: 75%;">
               <div class="card-header">
                 <%= my_dino.name %>
               </div>
 
                 <% if my_dino.photo.attached? %>
-                  <div class="card-image-dino" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path my_dino.photo.key, height: 300, crop: :fill %>')">
-                  </div>
+                  <div class="w-50 bg-center bg-cove" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path my_dino.photo.key, height: 300, crop: :fill %>')">
                 <% else %>
                   <p>Pas d'image.</p>
                 <% end %>
+                  </div>
 
-                <div class="d-flex flex-column justify-content-between">
-                    <div class="bar">
-                      <h5><%= my_dino.specie %></h5>
-                      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-owner avatar-bordered" />
-                    </div>
-                    <p class="fst-italic"> <%= my_dino.place %></p>
+                <div class="w-50 p-5">
+                  <h5> Espèce </h5>
+                  <p><%= my_dino.specie %></p>
+                  <br>
+                  <h5> Localisation </h5>
+                  <p><%= my_dino.place %></p>
+                  <br>
+                  <h5> Cacactéristiques </h5>
+                  <p><%= my_dino.characteristic %></p>
+                  <br>
+                  <h5><strong>Description </strong></h5>
+                  <p><%= my_dino.description %></p>
                 </div>
 
-                <div class="description d-flex justify-content-between">
-                  <h6><%= my_dino.characteristic %></h6>
-                  <h2 class="card-pricing d-flex align-items-center"><%= my_dino.price%>€</h2>
-                </div>
+                  <li class="list-group-item">
+                    <%= link_to "Supprimer ce dino", owner_dino_path(my_dino), method: :delete, data: { confirm: "Are you sure?" } %>
+                  </li>
+
+                  </div>
               </div>
-            </div>
-
+            <% end %>
+          </div>
         </div>
-      <% end %>
-    </div>
-
-  </div>
-</div>
+      </div>

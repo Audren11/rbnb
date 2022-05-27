@@ -1,7 +1,23 @@
-
-
 // OWNER INDEX ALL MY DINOS
-h2 {
+.title-my-dinos {
   color: white;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ .position-card-dino {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.card .my-dinos-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
 }
