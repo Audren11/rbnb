@@ -16,7 +16,7 @@
       <div class="p-10 w-65", style="height: 248px; width: 450px";>
         <ul>
           <h5><%= "Status de votre réservation" %></h5>
-          <p><%= booking.status %></p>
+          <p><%= booking.french_status %></p>
           <h5><%="Nom du propriétaire"%></h5>
           <p><%= booking.dino.user.first_name %></p>
           <h5><%="Nom du dino"%></h5>
@@ -42,11 +42,13 @@
         <h5><%= "Dates de réservation" %></h5>
         <p><%= "Du #{booking.checkin_on} au #{booking.checkout_on}" %></p>
         <%= link_to "Voir le détail de la réservation", root_path %>
-          <div class="d-flex" >
-          <%= link_to "Accepter", approve_owner_booking_path(booking), method: :patch, class: "btn-green" %>
-          <br>
-          <%= link_to "Refuser", reject_owner_booking_path(booking), method: :patch, class: "btn-green" %>
-          </div>
+          <% if booking.status == "pending"%>
+            <div class="d-flex" >
+              <%= link_to "Accepter", approve_owner_booking_path(booking), method: :patch, class: "btn-green" %>
+              <br>
+              <%= link_to "Refuser", reject_owner_booking_path(booking), method: :patch, class: "btn-green" %>
+            <% else booking.french_status %>
+          <% end %>
     </ul>
     <br>
 
