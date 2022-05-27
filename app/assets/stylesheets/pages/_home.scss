@@ -4,6 +4,11 @@
   text-align: center;
 }
 
+.logo {
+  vertical-align: inline;
+  // padding-inline: 10px 20px;
+}
+
 .btn-search {
   color: white;
 }
@@ -106,7 +111,13 @@
 
 
 .colorspace {
-  background-color: #FAFDD6;
+  background-color: #123534;
+  opacity: 0.95;
+  // background-color: #EDE4DA;
+  // background-color: white;
+  // background-color: #031F12;
+  // background-color: #0E1E23;
+  color: white;
 }
 
 .overflow-hidden {

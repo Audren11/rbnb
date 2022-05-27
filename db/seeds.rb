@@ -48,7 +48,7 @@ giselle.photo.attach(io: giselle_image, filename: 'nes.jpg', content_type: 'imag
 
 
 kevin = Dino.create!(name: "Kévin... Kévin", specie: "Triceratops", price: 200,
-          description: "Kévin vous offrira des magnolias et vous emmènera sur sa motocross à Alandrie, accrochez-vous !",
+          description: "Kévin vous offrira des magnolias et vous emmènera sur sa motocross à Alexandrie, accrochez-vous !",
           place: 'Lyon', characteristic: 'Fan de Claude-François', user_id: marty.id)
 
 kevin_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653407570/dinosaur-5414593__480_xwqpe5.jpg")
@@ -64,8 +64,13 @@ oscar.photo.attach(io: oscar_image, filename: 'nes.jpg', content_type: 'image/jp
 
 
 rodrigues = Dino.create!(name: "Rodrigues L'Intrépide", specie: "Vélociraptor", price: 120,
+<<<<<<< HEAD
               description: "Rodrigues se déplace sur toute la Norvège pour nettoyer vos intérieurs ! Maniaque du ménage, il saura faire disparaître frigo, salon, maison entière.",
               place: 'Paris', characteristic: 'Maniaque du ménage', user_id: xavier.id)
+=======
+              description: "Rodrigues se déplace dans tout Paris pour nettoyer vos intérieurs ! Maniaque du ménage, il saura faire disparaître frigo, salon, maison entière.",
+              place: 'Paris', characteristic: 'Maniaque du ménage', user: xavier)
+>>>>>>> master
 
 
 rodrigues_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653385264/b8ncm4khejc2ivi0marq.jpg")
@@ -90,7 +95,7 @@ geraldine.photo.attach(io: geraldine_image, filename: 'nes.jpg', content_type: '
 
 
 catherine = Dino.create!(name: "Cathy L'Indolore", specie: "Tricératops", price: 190,
-              description: "Gémaux de sous-naissance, Géraldine peut vous brosser délicatement les cheveux comme vous les arracher (ainsi que votre tête). En cas de besoin appelez le SAV, nous serons ravis de vous aider.",
+              description: "Gémaux de sous-naissance, Cathy peut vous brosser délicatement les cheveux comme vous les arracher (ainsi que votre tête). En cas de besoin appelez le SAV, nous serons ravis de vous aider.",
               place: 'Le Croisic', characteristic: 'Flexi-chiante', user: jeanfrancois)
 
 
