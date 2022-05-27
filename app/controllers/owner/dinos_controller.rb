@@ -12,6 +12,7 @@ class Owner::DinosController < ApplicationController
 
   def create
     @dino = Dino.new(dino_params)
+    @dino.user = current_user
 
     if @dino.save
       redirect_to owner_dinos_path, notice: 'Dino was successfully created.'
