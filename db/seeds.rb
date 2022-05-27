@@ -21,17 +21,17 @@ xavier = User.create(first_name: "Xavier", last_name: "Dupont", password: "azert
 marty = User.create(first_name: "Marty", last_name: "McFly", password: "azerty", email: "marty@zoo.com")
 
 
-gerard = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653596588/kisspng-computer-icons-avatar-woman-user-profile-boss-lady-5b364336a9f118.2036420915302828066961_dlby7a.jpg")
-gerard.photo.attach(io: jean_image, filename: 'nes.jpg', content_type: 'image/jpg')
+# file = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653596588/kisspng-computer-icons-avatar-woman-user-profile-boss-lady-5b364336a9f118.2036420915302828066961_dlby7a.jpg")
+# gerard.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
-jeanfrancois = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653596588/kisspng-computer-icons-user-avatar-woman-avatar-5b0c5b2f6ecaa1.2446433615275364314538_wzfe3k.jpg")
-jeanfrancois.photo.attach(io: jean_image, filename: 'nes.jpg', content_type: 'image/jpg')
+# file = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653596588/kisspng-computer-icons-user-avatar-woman-avatar-5b0c5b2f6ecaa1.2446433615275364314538_wzfe3k.jpg")
+# jeanfrancois.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
-xavier URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653596588/kisspng-computer-icons-avatar-mover-business-flat-design-corporate-elderly-care-5ada15a1548543.1841704615242418253462_qxej7g.jpg")
-xavier.photo.attach(io: jean_image, filename: 'nes.jpg', content_type: 'image/jpg')
+# file URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653596588/kisspng-computer-icons-avatar-mover-business-flat-design-corporate-elderly-care-5ada15a1548543.1841704615242418253462_qxej7g.jpg")
+# xavier.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
-marty = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653596588/kisspng-computer-icons-user-avatar-woman-avatar-5b0c5b2f6ecaa1.2446433615275364314538_wzfe3k.jpg")
-marty.photo.attach(io: jean_image, filename: 'nes.jpg', content_type: 'image/jpg')
+# file = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653596588/kisspng-computer-icons-user-avatar-woman-avatar-5b0c5b2f6ecaa1.2446433615275364314538_wzfe3k.jpg")
+# marty.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 jean_jean = Dino.create!(name: "Jean-Jean", specie: "Diplodocus", price: 100,
 description: "Sacré Jean-Jean ! De son vrai nom Rémy, il aime se détendre à l'asile par temps clair, un vrai clown!",

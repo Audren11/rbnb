@@ -30,7 +30,7 @@
     <h1><b> MES DINOS EN LOCATION</b></h1>
     <% @my_bookings.each do |booking| %>
       <div style="height: 310px", class="resa-dino bg-secondary mb-3 p-3 rounded d-flex w-65">
-        <ul>
+        <ul class="w-100 ps-0">
           <h5><%= "Décision de la réservation" %></h5>
           <p><%= booking.french_status %></p>
           <h5><%= "Infos" %></h5>
@@ -39,40 +39,16 @@
           <p><%= "Du #{booking.checkin_on} au #{booking.checkout_on}" %></p>
           <%= link_to "Voir le détail de la réservation", root_path %>
           <% if booking.status == "pending"%>
-            <div class="d-flex" >
-              <%= link_to "Accepter", approve_owner_booking_path(booking), method: :patch, class: "btn-green" %>
+            <div class="d-flex">
+              <%= link_to "Accepter", approve_owner_booking_path(booking), method: :patch, class: "btn-green w-50 me-2" %>
               <br>
-              <%= link_to "Refuser", reject_owner_booking_path(booking), method: :patch, class: "btn-green" %>
+              <%= link_to "Refuser", reject_owner_booking_path(booking), method: :patch, class: "btn-green w-50 ms-2" %>
+            </div>
           <% else booking.french_status %>
           <% end %>
         </ul>
-              <br>
+        <br>
       </div>
-
-    <% end %>
-  </div>
-
-  <div class="w-50  bg-secondary p-3 col-12 col-lg-6">
-    <h2> Mes réservations en cours </h2>
-    <% @my_bookings.each do |booking| %>
-      <ul>
-        <h5><%= "Décision de la réservation" %></h5>
-        <p><%= booking.french_status %></p>
-        <h5><%= "Infos" %></h5>
-        <p><%= "Le locataire #{booking.user.first_name} pour le dino #{booking.dino.name}" %></p>
-        <h5><%= "Dates de réservation" %></h5>
-        <p><%= "Du #{booking.checkin_on} au #{booking.checkout_on}" %></p>
-        <%= link_to "Voir le détail de la réservation", root_path %>
-          <% if booking.status == "pending"%>
-            <div class="d-flex" >
-              <%= link_to "Accepter", approve_owner_booking_path(booking), method: :patch, class: "btn-green" %>
-              <br>
-              <%= link_to "Refuser", reject_owner_booking_path(booking), method: :patch, class: "btn-green" %>
-            </div>
-          <% else booking.french_status %>
-        <% end %>
-      </ul>
-      <br>
 
     <% end %>
   </div>
