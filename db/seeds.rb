@@ -20,14 +20,24 @@ jeanfrancois = User.create(first_name: "Jean-Francois", last_name: "Martin", pas
 xavier = User.create(first_name: "Xavier", last_name: "Dupont", password: "azerty", email: "xavier@zoo.com")
 marty = User.create(first_name: "Marty", last_name: "McFly", password: "azerty", email: "marty@zoo.com")
 
-jean_jean = Dino.create!(name: "Jean-Jean", specie: "Diplodocus", price: 100,
-              description: "Sacré Jean-Jean ! De son vrai nom Rémy, il aime se détendre à l'asile par temps clair, un vrai clown!",
-              place: 'La Rochelle', characteristic: 'Maniaco-dépressif', user_id: gerard.id)
 
+# gerard = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653596588/kisspng-computer-icons-avatar-mover-business-flat-design-corporate-elderly-care-5ada15a1548543.1841704615242418253462_qxej7g.jpg")
+# gerard.photo.attach(io: jean_image, filename: 'nes.jpg', content_type: 'image/jpg')
+
+# jeanfrancois = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653596588/kisspng-computer-icons-avatar-woman-user-profile-boss-lady-5b364336a9f118.2036420915302828066961_dlby7a.jpg")
+# jeanfrancois.photo.attach(io: jean_image, filename: 'nes.jpg', content_type: 'image/jpg')
+
+# xavier URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653596588/kisspng-computer-icons-avatar-mover-business-flat-design-corporate-elderly-care-5ada15a1548543.1841704615242418253462_qxej7g.jpg")
+# xavier.photo.attach(io: jean_image, filename: 'nes.jpg', content_type: 'image/jpg')
+
+# marty = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653596588/kisspng-computer-icons-user-avatar-woman-avatar-5b0c5b2f6ecaa1.2446433615275364314538_wzfe3k.jpg")
+# marty.photo.attach(io: jean_image, filename: 'nes.jpg', content_type: 'image/jpg')
+jean_jean = Dino.create!(name: "Jean-Jean", specie: "Diplodocus", price: 100,
+description: "Sacré Jean-Jean ! De son vrai nom Rémy, il aime se détendre à l'asile par temps clair, un vrai clown!",
+place: 'La Rochelle', characteristic: 'Maniaco-dépressif', user_id: gerard.id)
 
 jean_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653407563/1200px-diplodocus_model_okdf4h.jpg")
 jean_jean.photo.attach(io: jean_image, filename: 'nes.jpg', content_type: 'image/jpg')
-
 
 giselle = Dino.create!(name: "Giselle La Pelle", specie: "Spinosaurus", price: 150,
             description: "Elle n'est pas très gracieuse et accompagnable, mais elle est futée et renifle bien les portes, indispensable en cas de séquestration.",
@@ -56,6 +66,7 @@ oscar.photo.attach(io: oscar_image, filename: 'nes.jpg', content_type: 'image/jp
 rodrigues = Dino.create!(name: "Rodrigues L'Intrépide", specie: "Vélociraptor", price: 120,
               description: "Rodrigues se déplace dans tout Paris pour nettoyer vos intérieurs ! Maniaque du ménage, il saura faire disparaître frigo, salon, maison entière.",
               place: 'Paris', characteristic: 'Maniaque du ménage', user: xavier)
+
 
 
 rodrigues_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653385264/b8ncm4khejc2ivi0marq.jpg")
@@ -88,6 +99,6 @@ catherine_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1
 catherine.photo.attach(io: catherine_image, filename: 'nes.jpg', content_type: 'image/jpg')
 
 
-Booking.create!( dino_id: jean_jean.id, user_id: gerard.id, total_price: 3000, checkin_on: DateTime.parse("24/07/2023"), checkout_on: DateTime.parse("29/07/2023"))
+# Booking.create!( dino_id: jean_jean.id, user_id: gerard.id, total_price: 3000, checkin_on: DateTime.parse("24/07/2023"), checkout_on: DateTime.parse("29/07/2023"))
 
 puts "Finished!"
