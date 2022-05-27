@@ -64,9 +64,8 @@ oscar.photo.attach(io: oscar_image, filename: 'nes.jpg', content_type: 'image/jp
 
 
 rodrigues = Dino.create!(name: "Rodrigues L'Intrépide", specie: "Vélociraptor", price: 120,
-              description: "Rodrigues se déplace dans tout Paris pour nettoyer vos intérieurs ! Maniaque du ménage, il saura faire disparaître frigo, salon, maison entière.",
-              place: 'Paris', characteristic: 'Maniaque du ménage', user: xavier)
-
+              description: "Rodrigues se déplace sur toute la Norvège pour nettoyer vos intérieurs ! Maniaque du ménage, il saura faire disparaître frigo, salon, maison entière.",
+              place: 'Paris', characteristic: 'Maniaque du ménage', user_id: xavier.id)
 
 
 rodrigues_image = URI.open("https://res.cloudinary.com/df6z4mw2e/image/upload/v1653385264/b8ncm4khejc2ivi0marq.jpg")
