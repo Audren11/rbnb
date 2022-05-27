@@ -1,13 +1,21 @@
 <div class="index-container">
+  <h2>All my dinos </h2>
   <div class="row w-100">
 
-    <div class="col cards-index">
+    <div class="col cards">
       <% @my_dinos.each do |my_dino| %>
         <div class="col position-card-my_dino">
             <div class="card" style="width: 18rem;">
               <div class="card-header">
                 <%= my_dino.name %>
               </div>
+
+                <% if my_dino.photo.attached? %>
+                  <div class="card-image-dino" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path my_dino.photo.key, height: 300, crop: :fill %>')">
+                  </div>
+                <% else %>
+                  <p>Pas d'image.</p>
+                <% end %>
 
                 <div class="d-flex flex-column justify-content-between">
                     <div class="bar">

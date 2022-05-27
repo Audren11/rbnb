@@ -17,7 +17,7 @@ class Owner::DinosController < ApplicationController
     if @dino.save
       redirect_to owner_dinos_path, notice: 'Dino was successfully created.'
     else
-      render "owner/dinos_path"
+      render :new
     end
   end
 
