@@ -1,27 +1,24 @@
 <div class="index-container">
-  <div class="title-my-dinos">
+  <div class="title-all-my-dinos">
     <h2>- All my dinos -</h2>
   </div>
-  <div class="row">
-
-    <div class="col">
       <% @my_dinos.each do |my_dino| %>
-        <div class="col position-card-dino">
-            <div class="card my-dinos-cards" style="width: 75%;">
-              <div class="card-header">
-                <%= my_dino.name %>
+      <div class="position-card-dino">
+          <div class="card my-dinos-cards" style="width: 75%;">
+            <div class="card-header">
+              <%= my_dino.name %>
+            </div>
+            <div class="row photo-and-text">
+              <% if my_dino.photo.attached? %>
+                <div class="col card-image-my-dino " style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path my_dino.photo.key, crop: :fill %>')">
+              <% else %>
+                <p>Pas d'image.</p>
+                </div>
+              <% end %>
               </div>
-
-                <% if my_dino.photo.attached? %>
-                  <div class="w-50 bg-center bg-cove" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path my_dino.photo.key, height: 300, crop: :fill %>')">
-                <% else %>
-                  <p>Pas d'image.</p>
-                <% end %>
-                  </div>
-
-                <div class="w-50 p-5">
-                  <h5> Espèce </h5>
-                  <p><%= my_dino.specie %></p>
+              <div class="col card-info-my-dino">
+                <div class="card-just-description">
+                  <h4><strong><%= my_dino.specie %></strong></h4>
                   <br>
                   <h5> Localisation </h5>
                   <p><%= my_dino.place %></p>
@@ -31,15 +28,19 @@
                   <br>
                   <h5><strong>Description </strong></h5>
                   <p><%= my_dino.description %></p>
+                  <br>
+
                 </div>
-
-                  <li class="list-group-item">
-                    <%= link_to "Supprimer ce dino", owner_dino_path(my_dino), method: :delete, data: { confirm: "Are you sure?" } %>
-                  </li>
-
-                  </div>
-              </div>
-            <% end %>
+            <div class="delete-dino">
+             <h4><strong><%= my_dino.price %> € / jour </strong></h4>
+              <li class="list-group-item">
+                <%= link_to "Supprimer ce dino", owner_dino_path(my_dino), method: :delete, data: { confirm: "Are you sure?" } %>
+              </li>
+            </div>
+            </div>
           </div>
         </div>
       </div>
+      <% end %>
+    </div>
+  </div>
